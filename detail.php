@@ -45,6 +45,7 @@
     $preference->external_reference = "juliozarate5@hotmail.com";
 
     $preference->auto_return = "approved";
+
     $preference->notification_url = "https://juliozarate5-mp-commerce-php.herokuapp.com/notifications.php";
 
     $preference->back_urls = array(
@@ -53,6 +54,7 @@
         "failure" => "https://juliozarate5-mp-commerce-php.herokuapp.com/failure.php",
         "pending" => "https://juliozarate5-mp-commerce-php.herokuapp.com/pending.php"
     );
+    //simular pago
     $preference->save();    
 ?>
 <!DOCTYPE html>
@@ -224,4 +226,5 @@
 });
 </script>
 </script>
+<script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
 </body></html>
