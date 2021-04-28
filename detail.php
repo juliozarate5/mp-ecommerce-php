@@ -19,6 +19,9 @@
     $payer = new MercadoPago\Payer();
     $payer->id = "681094118"; 
     $payer->name = "Lalo Landa";
+    $payer->first_name = "Lalo";
+    $payer->last_name = "Landa";
+    $payer->date_created = null;
     $payer->email = "test_user_83958037@testuser.com";
     $payer->phone = array(
       "area_code" => "52", 
@@ -33,7 +36,7 @@
     /**/
     # Crea ítems en la preferencia
     $item = new MercadoPago\Item;
-    $item->id = 1234;
+    $item->id = "1234";
     $item->title = $_POST['title'];
     $item->description = "Dispositivo móvil de Tienda e-commerce";
     $item->picture_url = $_POST['img'];
@@ -54,7 +57,6 @@
         "failure" => "https://juliozarate5-mp-commerce-php.herokuapp.com/failure.php",
         "pending" => "https://juliozarate5-mp-commerce-php.herokuapp.com/pending.php"
     );
-    //simular pago
     $preference->save();    
 ?>
 <!DOCTYPE html>
@@ -226,5 +228,5 @@
 });
 </script>
 </script>
-<script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
+<script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
 </body></html>
