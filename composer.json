@@ -1,5 +1,12 @@
 {
-    "name": "mp-ecommerce-php",
-    "type": "project",
-    "require": {}
+    "name": "juliocesarmartinez/mp-ecommerce-php",
+    "authors": [
+        {
+            "name": "jmartinez",
+            "email": "juliozarate5@hotmail.com"
+        }
+    ],
+    "require": {
+        "mercadopago/dx-php": "2.2.1"
+    }
 }
