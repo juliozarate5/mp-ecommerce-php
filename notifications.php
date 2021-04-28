@@ -2,8 +2,8 @@
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
 
-//MercadoPago\SDK::setAccessToken("APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803");
-MercadoPago\SDK::setAccessToken("TEST-107115299664991-042303-2d51c38bd0058fb64bed4e386d46a20c-41659094");
+MercadoPago\SDK::setAccessToken("APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803");
+//MercadoPago\SDK::setAccessToken("TEST-107115299664991-042303-2d51c38bd0058fb64bed4e386d46a20c-41659094");
 
 
 switch($_POST["type"]) {
