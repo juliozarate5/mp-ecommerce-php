@@ -1,8 +1,9 @@
 <?php
     require __DIR__ .  '/vendor/autoload.php';
         // credentials
-    MercadoPago\SDK::setAccessToken('APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803');
+    MercadoPago\SDK::setAccessToken("APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803");
     MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
+    MercadoPago\SDK::setPublicKey("APP_USR-a98b17ae-47a6-4a35-b92d-01919002b97e");
 
     $preference = new MercadoPago\Preference();
     // Payment Method
@@ -29,12 +30,11 @@
     );
     $payer->address = array(
       "street_name" => "Insurgentes Sur",
-      "street_number" => 1602,
+      "street_number" => "1602",
       "zip_code" => "03940"
     );
     $preference->payer = $payer;
-    /**/
-    # Crea ítems en la preferencia
+    // items
     $item = new MercadoPago\Item;
     $item->id = "1234";
     $item->title = $_POST['title'];
@@ -45,7 +45,7 @@
 
     $preference->items = array($item);
 
-    $preference->external_reference = "juliozarate5@hotmail.com";
+    $preference->external_reference = "juliozarate5@yahoo.com";
 
     $preference->auto_return = "approved";
 
@@ -211,19 +211,16 @@
 </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div class="mp-mercadopago-checkout-wrapper" style="z-index:-2147483647;display:block;background:rgba(0, 0, 0, 0.7);border:0;overflow:hidden;visibility:hidden;margin:0;padding:0;position:fixed;left:0;top:0;width:0;opacity:0;height:0;transition:opacity 220ms ease-in;"> <svg class="mp-spinner" viewBox="25 25 50 50"> <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> </div><div id="ac-gn-viewport-emitter"> </div>
 <script src="https://sdk.mercadopago.com/js/v2"></script>
 <script>
-// Agrega credenciales de SDK
   const mp = new MercadoPago('APP_USR-a98b17ae-47a6-4a35-b92d-01919002b97e', {
         locale: 'es-CO'
   });
-
-  // Inicializa el checkout
   mp.checkout({
       preference: {
           id: '<?php echo $preference->id; ?>'
       },
       render: {
-            container: '.cho-container', // Indica dónde se mostrará el botón de pago
-            label: 'Pagar la compra', // Cambia el texto del botón de pago (opcional)
+            container: '.cho-container',
+            label: 'Pagar la compra',
       }
 });
 </script>
