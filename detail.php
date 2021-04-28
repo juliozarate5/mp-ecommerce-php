@@ -3,7 +3,7 @@
         // credentials
     MercadoPago\SDK::setAccessToken("APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803");
     MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
-    MercadoPago\SDK::setPublicKey("APP_USR-b46a7e42-f087-47c9-acb3-4c43ff3b7724");
+    //MercadoPago\SDK::setPublicKey("APP_USR-b46a7e42-f087-47c9-acb3-4c43ff3b7724");
 
     $preference = new MercadoPago\Preference();
     // items
