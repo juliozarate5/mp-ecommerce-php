@@ -6,6 +6,39 @@
     MercadoPago\SDK::setPublicKey("APP_USR-a98b17ae-47a6-4a35-b92d-01919002b97e");
 
     $preference = new MercadoPago\Preference();
+    // items
+    $item = new MercadoPago\Item;
+    $item->id = "1234";
+    $item->title = $_POST['title'];
+    $item->description = "Dispositivo móvil de Tienda e-commerce";
+    $item->picture_url = $_POST['img'];
+    $item->quantity = $_POST['unit'];
+    $item->unit_price = $_POST['price'];
+    $item->currency_id = "$";
+
+    $preference->items = array($item);
+    // payer
+    $payer = new MercadoPago\Payer();
+    $payer->name = "Lalo Landa";
+    $payer->first_name = "Lalo";
+    $payer->last_name = "Landa";
+    $payer->date_created = null;
+    $payer->email = "test_user_83958037@testuser.com";
+    $payer->phone = array(
+      "area_code" => "52", 
+      "number" => "5549737300"
+    );
+    $payer->identification = array(
+        
+    );
+    $payer->address = array(
+      "street_name" => "Insurgentes Sur",
+      "street_number" => 1602,
+      "zip_code" => "03940"
+    );
+    $preference->payer = $payer;
+    
+    
     // Payment Method
     $preference->payment_methods = array(
       "excluded_payment_methods" => array(
@@ -16,34 +49,7 @@
       ),
       "installments" => 6
     );
-    // payer
-    $payer = new MercadoPago\Payer();
-    $payer->id = "681094118"; 
-    $payer->name = "Lalo Landa";
-    $payer->first_name = "Lalo";
-    $payer->last_name = "Landa";
-    $payer->date_created = null;
-    $payer->email = "test_user_83958037@testuser.com";
-    $payer->phone = array(
-      "area_code" => "52", 
-      "number" => "5549737300"
-    );
-    $payer->address = array(
-      "street_name" => "Insurgentes Sur",
-      "street_number" => "1602",
-      "zip_code" => "03940"
-    );
-    $preference->payer = $payer;
-    // items
-    $item = new MercadoPago\Item;
-    $item->id = "1234";
-    $item->title = $_POST['title'];
-    $item->description = "Dispositivo móvil de Tienda e-commerce";
-    $item->picture_url = $_POST['img'];
-    $item->quantity = $_POST['unit'];
-    $item->unit_price = $_POST['price'];
 
-    $preference->items = array($item);
 
     $preference->external_reference = "juliozarate5@yahoo.com";
 
