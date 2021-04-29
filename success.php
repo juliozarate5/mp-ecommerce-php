@@ -9,7 +9,7 @@ if($_GET){
     echo 'Site Id: ';
     if(isset($_GET['site_id']))echo $_GET['site_id'];
     echo '<br>';
-    echo 'External Reference';
+    echo 'External Reference: ';
     if(isset($_GET['external_reference']))echo $_GET['external_reference'];
     echo '<br>';
     echo 'Prefence Id: ';
