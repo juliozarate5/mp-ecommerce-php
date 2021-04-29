@@ -11,8 +11,10 @@ if($_GET){
     echo '<br>';
     echo 'External Reference';
     if(isset($_GET['external_reference']))echo $_GET['external_reference'];
+    echo '<br>';
     echo 'Prefence Id: ';
     if(isset($_GET['preference_id']))echo $_GET['preference_id'];
+    echo '<br>';
     echo 'Payment Type: ';
     if(isset($_GET['payment_type']))echo $_GET['payment_type'];
     

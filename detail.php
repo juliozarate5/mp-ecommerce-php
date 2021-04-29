@@ -3,7 +3,7 @@
         // credentials
     MercadoPago\SDK::setAccessToken("APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803");
     MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
-    MercadoPago\SDK::setPublicKey("APP_USR-a98b17ae-47a6-4a35-b92d-01919002b97e");
+    //MercadoPago\SDK::setPublicKey("APP_USR-a98b17ae-47a6-4a35-b92d-01919002b97e");
 
     $preference = new MercadoPago\Preference();
     // items
@@ -49,8 +49,7 @@
     $preference->external_reference = "juliozarate5@yahoo.com";
     $preference->notification_url = "https://juliozarate5-mp-commerce-php.herokuapp.com/notifications.php";
     $preference->back_urls = array(
-        "success" => "https://juliozarate5-mp-commerce-php.herokuapp.com/success.php?collection_id=681067803&collection_status=approved&external_refe
-        rence=".$preference->external_reference."&payment_type=credit_card&preference_id=".$preference->id."&site_id=MCO&processing_mode=aggregator&merchant_account_id=null",
+        "success" => "https://juliozarate5-mp-commerce-php.herokuapp.com/success.php?collection_id=681067803&collection_status=approved&external_reference=".$preference->external_reference."&payment_type=credit_card&preference_id=".$preference->id."&site_id=MCO&processing_mode=aggregator&merchant_account_id=null",
         "failure" => "https://juliozarate5-mp-commerce-php.herokuapp.com/failure.php",
         "pending" => "https://juliozarate5-mp-commerce-php.herokuapp.com/pending.php"
     );
