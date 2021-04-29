@@ -26,6 +26,7 @@
       "area_code" => "52", 
       "number" => "5549737300"
     );
+    $payer->email = "test_user_83958037@testuser.com";
     $payer->identification = array(
         "number" => "681094118"
     );
